@@ -37,7 +37,7 @@ int print_upx(va_list arguments, char *buf, unsigned int ibuf)
 			count++;
 		}
 	}
-	free(binar);
+	free(binary);
 	free(hexadecimal);
 	return (count);
 }

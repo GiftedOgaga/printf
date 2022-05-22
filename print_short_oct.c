@@ -30,7 +30,7 @@ int prinhoct(va_list arguments, char *buf, unsigned int ibuf)
 	for (first_digit = i = count = 0; octal[i]; i++)
 	{
 		if (octal[i] != '0' && first_digit == 0)
-			first_digits = 1;
+			first_digit = 1;
 		if (first_digit)
 		{
 			ibuf = handl_buf(buf, octal[i], ibuf);
