@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * _printf - formatted output conversion and print data.
+ * _printf - A function that works exactly like the original
+ * printf in the standard library.
  * @format: input string.
- *
+ * @...: The indicator for other arguments
  * Return: number of chars printed.
  */
 int _printf(const char *format, ...)
@@ -14,9 +15,9 @@ int _printf(const char *format, ...)
 	char *buffer;
 
 	va_start(arguments, format), buffer = malloc(sizeof(char) * 1024);
-	if (!format || !buffer || (format[i] == '%' && !format[i + 1]))
+	if (format == 0 || buffer == 0 || (format[i] == '%' && format[i + 1] == 0))
 		return (-1);
-	if (!format[i])
+	if (format[i] == 0)
 		return (0);
 	for (i = 0; format && format[i]; i++)
 	{
@@ -37,7 +38,7 @@ int _printf(const char *format, ...)
 				else
 				{
 					len += function(arguments, buffer, ibuf);
-					i += ev_print_func(format, i + 1);
+					i += ev_prt_fc(format, i + 1);
 				}
 			} i++;
 		}
