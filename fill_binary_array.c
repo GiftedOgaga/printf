@@ -22,10 +22,8 @@ char *fill_binary_array(char *binary, long int int_in, int isneg, int limit)
 			binary[i] = '0';
 		}
 		else
-		{
 			binary[i] = (int_in % 2) + '0';
 		int_in /= 2;
-		}
 	}
 	if (int_in != 0)
 	{
